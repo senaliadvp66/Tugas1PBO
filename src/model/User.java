@@ -17,5 +17,5 @@ public abstract class User {
         return this.username.equals(username) && this.password.equals(password);
     }
 
-    public abstract String getRole(); // untuk tahu admin atau customer
+    public abstract String getRole();
 }
