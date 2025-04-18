@@ -51,13 +51,18 @@ public class AdminCustomerController {
                 case 1:
                     System.out.println("Daftar Saham Tersedia:");
                     for (int i = 0; i < sahamList.size(); i++) {
-                        System.out.println((i + 1) + ". " + sahamList.get(i));
+                        System.out.println((i + 1) + ". " + sahamList.get(i));  // Menampilkan daftar saham yang tersedia
                     }
                     System.out.print("Pilih saham yang ingin dibeli: ");
-                    int sahamChoiceBuy = scanner.nextInt();
-                    portofolio.beliSaham(sahamList.get(sahamChoiceBuy - 1));
-                    break;
+                    int sahamChoiceBuy = scanner.nextInt();  // Input pilihan saham yang ingin dibeli
+                    // Tambahkan saham yang dibeli ke portofolio customer
+                    portofolio.beliSaham(sahamList.get(sahamChoiceBuy - 1));  // Menambahkan saham yang dipilih ke portofolio
+                    System.out.println("Saham berhasil dibeli!");
 
+                    // Optional: Tampilkan kembali portofolio setelah pembelian
+                    System.out.println("\nPortofolio Anda sekarang:");
+                    portofolio.tampilkanSaham();  // Menampilkan daftar saham yang dimiliki oleh customer
+                    break;
                 case 2:
                     System.out.println("Daftar Saham yang Dimiliki:");
                     // Menampilkan saham yang dimiliki customer
@@ -73,11 +78,17 @@ public class AdminCustomerController {
                 case 3:
                     System.out.println("Daftar SBN Tersedia:");
                     for (int i = 0; i < sbnList.size(); i++) {
-                        System.out.println((i + 1) + ". " + sbnList.get(i));
+                        System.out.println((i + 1) + ". " + sbnList.get(i));  // Menampilkan daftar SBN yang tersedia
                     }
                     System.out.print("Pilih SBN yang ingin dibeli: ");
-                    int sbnChoice = scanner.nextInt();
-                    portofolio.beliSBN(sbnList.get(sbnChoice - 1));
+                    int sbnChoice = scanner.nextInt();  // Input pilihan SBN yang ingin dibeli
+                    // Tambahkan SBN yang dibeli ke portofolio customer
+                    portofolio.beliSBN(sbnList.get(sbnChoice - 1));  // Menambahkan SBN yang dipilih ke portofolio
+                    System.out.println("SBN berhasil dibeli!");
+
+                    // Optional: Tampilkan kembali portofolio setelah pembelian
+                    System.out.println("\nPortofolio Anda sekarang:");
+                    portofolio.tampilkanSBN();  // Menampilkan daftar SBN yang dimiliki oleh customer
                     break;
                 case 4:
                     // Menampilkan portofolio customer (saham dan SBN yang dimiliki)
