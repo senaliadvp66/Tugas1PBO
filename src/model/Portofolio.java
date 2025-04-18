@@ -20,6 +20,10 @@ public class Portofolio {
             System.out.println(saham);
         }
     }
+    public List<Saham> getSahamList() {
+        return sahamList;
+    }
+
 
     public void tampilkanSBN() {
         System.out.println("Daftar SBN yang dimiliki:");
