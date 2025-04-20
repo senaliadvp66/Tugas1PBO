@@ -9,9 +9,8 @@ public class Saham {
     public Saham(String kode, String namaPerusahaan, double harga) {
         this.kode = kode;
         this.namaPerusahaan = namaPerusahaan;
-        this.harga = harga;
+        setHarga(harga);
     }
-
 
     public String getKode() {
         return kode;
@@ -26,11 +25,14 @@ public class Saham {
     }
 
     public void setHarga(double harga) {
+        if (harga <= 0) {
+            throw new IllegalArgumentException("Harga saham harus lebih dari 0.");
+        }
         this.harga = harga;
     }
 
-    @Override
-    public String toString() {
-        return kode + " - " + namaPerusahaan + " (Rp" + harga + ")";
+    public void tampilkanInfo() {
+        System.out.printf("Kode: %s | Nama: %s | Harga: Rp%.2f\n", kode, namaPerusahaan, harga);
     }
 }
+
