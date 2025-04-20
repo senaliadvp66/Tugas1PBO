@@ -37,6 +37,7 @@ public class CustomerController {
                         System.out.println("Pilihan tidak valid.");
                     }
                 }
+                break;
                 case 2: {
                     if (portofolio.getSaham().isEmpty()) {
                         System.out.println("Belum punya saham.");
@@ -55,6 +56,7 @@ public class CustomerController {
                         System.out.println("✅ Saham berhasil dijual.");
                     }
                 }
+                break;
                 case 3: {
                     if (daftarSBN.isEmpty()) {
                         System.out.println("Belum ada SBN.");
@@ -71,18 +73,20 @@ public class CustomerController {
                     portofolio.beliSBN(sbn, nominal);
                     System.out.println("✅ SBN berhasil dibeli.");
                 }
+                break;
                 case 4 :{
                     double bunga = inputDouble(input, "Bunga (%): ");
                     double nominal = inputDouble(input, "Nominal investasi: ");
                     double hasil = (bunga / 100) / 12 * 0.9 * nominal;
                     System.out.printf("💰 Simulasi bunga per bulan: Rp%.2f\n", hasil);
-                }
-                case 5 : portofolio.tampilkanPortofolio();
+                } break;
+                case 5 : portofolio.tampilkanPortofolio(); break;
                 case 6 : {
                     System.out.println("Logout...");
                     return;
                 }
                 default : System.out.println("Pilihan tidak valid.");
+                break;
             }
         }
     }
