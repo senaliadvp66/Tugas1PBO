@@ -1,15 +1,13 @@
 package model;
 
-import java.time.LocalDate;
-
 public class SuratBerhargaNegara {
     private String nama;
     private double bunga;
-    private int jangkaWaktu; // dalam tahun
-    private LocalDate tanggalJatuhTempo;
-    private int kuotaNasional;
+    private int jangkaWaktu;
+    private String tanggalJatuhTempo;
+    private double kuotaNasional;
 
-    public SuratBerhargaNegara(String nama, double bunga, int jangkaWaktu, LocalDate tanggalJatuhTempo, int kuotaNasional) {
+    public SuratBerhargaNegara(String nama, double bunga, int jangkaWaktu, String tanggalJatuhTempo, double kuotaNasional) {
         this.nama = nama;
         this.bunga = bunga;
         this.jangkaWaktu = jangkaWaktu;
@@ -29,16 +27,23 @@ public class SuratBerhargaNegara {
         return jangkaWaktu;
     }
 
-    public LocalDate getTanggalJatuhTempo() {
+    public String getTanggalJatuhTempo() {
         return tanggalJatuhTempo;
     }
 
-    public int getKuotaNasional() {
+    public double getKuotaNasional() {
         return kuotaNasional;
     }
 
-    @Override
-    public String toString() {
-        return nama + " - Bunga: " + bunga + "% - Jangka Waktu: " + jangkaWaktu + " tahun";
+    public void kurangiKuota(double nominal) {
+        if (nominal <= 0 || nominal > kuotaNasional) {
+            throw new IllegalArgumentException("Nominal tidak valid atau melebihi kuota.");
+        }
+        this.kuotaNasional -= nominal;
+    }
+
+    public void tampilkanInfo() {
+        System.out.printf("Nama: %s | Bunga: %.2f%% | Waktu: %d bln | Jatuh Tempo: %s | Kuota: Rp%.2f\n",
+                nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
     }
 }
