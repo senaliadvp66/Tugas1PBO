@@ -21,7 +21,7 @@ public class AdminController {
                     double harga = inputDouble(input, "Harga Saham: ");
                     daftarSaham.add(new Saham(kode, nama, harga));
                     System.out.println("✅ Saham berhasil ditambahkan!");
-                }
+                } break;
                 case 2 :{
                     if (daftarSaham.isEmpty()) {
                         System.out.println("Belum ada saham.");
@@ -39,7 +39,7 @@ public class AdminController {
                     } else {
                         System.out.println("Nomor tidak valid.");
                     }
-                }
+                } break;
                 case 3:{
                     String namaSbn = inputString(input, "Nama SBN: ");
                     double bunga = inputDouble(input, "Bunga (%): ");
@@ -48,7 +48,7 @@ public class AdminController {
                     double kuota = inputDouble(input, "Kuota Nasional: ");
                     daftarSBN.add(new SuratBerhargaNegara(namaSbn, bunga, waktu, tempo, kuota));
                     System.out.println("SBN berhasil ditambahkan!");
-                }
+                } break;
                 case 4: {
                     System.out.println("=== Daftar Saham ===");
                     if (daftarSaham.isEmpty()) System.out.println("Belum ada saham.");
@@ -57,12 +57,12 @@ public class AdminController {
                     System.out.println("\n=== Daftar SBN ===");
                     if (daftarSBN.isEmpty()) System.out.println("Belum ada SBN.");
                     else daftarSBN.forEach(SuratBerhargaNegara::tampilkanInfo);
-                }
+                } break;
                 case 5:{
                     System.out.println("Logout...");
                     return;
                 }
-                default: System.out.println("Pilihan tidak valid.");
+                default: System.out.println("Pilihan tidak valid."); break;
             }
         }
     }
