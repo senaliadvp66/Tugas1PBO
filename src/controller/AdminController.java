@@ -14,7 +14,8 @@ public class AdminController {
             System.out.println("\n=== MENU ADMIN ===");
             System.out.println("1. Saham");
             System.out.println("2. SBN");
-            System.out.println("3. Logout");
+            System.out.println("3. Lihat Produk Investasi");
+            System.out.println("4. Logout");
 
             int pilih = inputInt(input, "Masukan Pilihan: ");
 
@@ -26,6 +27,8 @@ public class AdminController {
                     MenuAdmin.menuSBN(input, daftarSBN);  // Panggil method dari MenuAdmin untuk SBN
                     break;
                 case 3:
+                    MenuAdmin.lihatProdukInvestasi(daftarSaham, daftarSBN);
+                case 4:
                     System.out.println("Logout berhasil.");
                     return;  // Logout dan keluar
                 default:
