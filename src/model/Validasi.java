@@ -14,6 +14,17 @@ public class Validasi {
         }
     }
 
+    public static double inputDouble(Scanner scanner, String pesan) {
+        while (true) {
+            System.out.print(pesan);
+            try {
+                return Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("⚠️ Masukkan angka desimal yang valid.");
+            }
+        }
+    }
+
     public static String inputString(Scanner scanner, String pesan) {
         while (true) {
             System.out.print(pesan);
