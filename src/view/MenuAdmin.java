@@ -32,6 +32,7 @@ public class MenuAdmin {
                     System.out.println("Pilihan tidak valid.");
             }
         }
+
     }
 
     // Method untuk menambah saham
@@ -97,4 +98,24 @@ public class MenuAdmin {
         System.out.println("SBN berhasil ditambahkan!");
     }
 
+    // Method untuk melihat produk investasi (Saham dan SBN)
+    public static void lihatProdukInvestasi(List<Saham> daftarSaham, List<SuratBerhargaNegara> daftarSBN) {
+        System.out.println("\n=== DAFTAR SAHAM ===");
+        if (daftarSaham.isEmpty()) {
+            System.out.println("Belum ada saham.");
+        } else {
+            for (Saham saham : daftarSaham) {
+                saham.tampilkanInfo();  // Menampilkan info saham
+            }
+        }
+
+        System.out.println("\n=== DAFTAR SBN ===");
+        if (daftarSBN.isEmpty()) {
+            System.out.println("Belum ada SBN.");
+        } else {
+            for (SuratBerhargaNegara sbn : daftarSBN) {
+                sbn.tampilkanInfo();  // Menampilkan info SBN
+            }
+        }
+    }
 }
