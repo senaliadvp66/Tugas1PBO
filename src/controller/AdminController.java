@@ -3,6 +3,8 @@ package controller;
 import model.*;
 import java.util.*;
 
+import static model.Validasi.*;
+
 public class AdminController {
     public static void menu(Admin admin, Scanner input, List<Saham> daftarSaham, List<SuratBerhargaNegara> daftarSBN) {
         while (true) {
@@ -12,7 +14,7 @@ public class AdminController {
             System.out.println("3. Tambah SBN");
             System.out.println("4. Lihat Produk Investasi");
             System.out.println("5. Logout");
-            int pilih = inputInt(input, "Pilih: ");
+            int pilih = inputInt(input, "Masukan Pilihan: ");
 
             switch (pilih) {
                 case 1 :{
@@ -64,37 +66,6 @@ public class AdminController {
                 }
                 default: System.out.println("Pilihan tidak valid."); break;
             }
-        }
-    }
-
-    private static int inputInt(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            try {
-                return Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("⚠️ Masukkan angka yang valid.");
-            }
-        }
-    }
-
-    private static double inputDouble(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            try {
-                return Double.parseDouble(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("⚠️ Masukkan angka desimal yang valid.");
-            }
-        }
-    }
-
-    private static String inputString(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            String input = scanner.nextLine().trim();
-            if (!input.isEmpty()) return input;
-            System.out.println("⚠️ Input tidak boleh kosong.");
         }
     }
 }
