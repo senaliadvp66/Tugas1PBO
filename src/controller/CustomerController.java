@@ -3,6 +3,9 @@ package controller;
 import model.*;
 import java.util.*;
 
+import static model.Validasi.inputDouble;
+import static model.Validasi.inputInt;
+
 public class CustomerController {
     public static void menu(Customer customer, List<Saham> daftarSaham, List<SuratBerhargaNegara> daftarSBN) {
         Scanner input = new Scanner(System.in);
@@ -87,28 +90,6 @@ public class CustomerController {
                 }
                 default : System.out.println("Pilihan tidak valid.");
                 break;
-            }
-        }
-    }
-
-    private static int inputInt(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            try {
-                return Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("⚠️ Masukkan angka yang valid.");
-            }
-        }
-    }
-
-    private static double inputDouble(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            try {
-                return Double.parseDouble(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("⚠️ Masukkan angka desimal yang valid.");
             }
         }
     }
