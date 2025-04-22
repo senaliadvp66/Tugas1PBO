@@ -2,6 +2,9 @@ import model.*;
 import controller.*;
 import java.util.*;
 
+import static model.Validasi.inputInt;
+import static model.Validasi.inputString;
+
 public class Main {
     static ArrayList<User> users = new ArrayList<>();
     static ArrayList<Saham> daftarSaham = new ArrayList<>();
@@ -43,9 +46,10 @@ public class Main {
     }
 
     static void initUsers() {
-        Admin admin = new Admin("admin", "admin123");
-        Customer budi = new Customer("budi", "123");
-        Customer sari = new Customer("sari", "456");
+        Admin lia = new Admin("Adminlia", "adminlia123");
+        Admin tasya = new Admin("Admintasya", "admintasya123");
+        Customer budi = new Customer("budiman", "budibudi");
+        Customer sari = new Customer("sarini", "sarih");
 
         // Tambah contoh saham & sbn
         Saham bbca = new Saham("BBCA", "Bank BCA", 10000);
@@ -56,16 +60,17 @@ public class Main {
         SuratBerhargaNegara sbr012 = new SuratBerhargaNegara("SBR012", 6.15, 24, "2027-05-01", 1_000_000_000);
         daftarSBN.add(sbr012);
 
-        // Isi portofolio awal Budi
+        // Isi portofolio awal Lia
         budi.getPortofolio().beliSaham(bbca, 100); // 100 lembar BBCA
         budi.getPortofolio().beliSBN(sbr012, 500_000); // beli SBN Rp500.000
 
-        // Isi portofolio awal Sari
+        // Isi portofolio awal Tasya
         sari.getPortofolio().beliSaham(tlkm, 50);  // 50 lembar TLKM
         sari.getPortofolio().beliSBN(sbr012, 1_000_000); // beli SBN Rp1.000.000
 
         // Masukkan user ke daftar login
-        users.add(admin);
+        users.add(lia);
+        users.add(tasya);
         users.add(budi);
         users.add(sari);
     }
@@ -79,35 +84,6 @@ public class Main {
         }
         return null;
     }
-
-    static int inputInt(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            try {
-                return Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("⚠️ Masukkan angka yang valid.");
-            }
-        }
-    }
-
-    static double inputDouble(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            try {
-                return Double.parseDouble(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("⚠️ Masukkan angka desimal yang valid.");
-            }
-        }
-    }
-
-    static String inputString(Scanner scanner, String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            String input = scanner.nextLine().trim();
-            if (!input.isEmpty()) return input;
-            System.out.println("⚠️ Input tidak boleh kosong.");
-        }
-    }
 }
+
+
