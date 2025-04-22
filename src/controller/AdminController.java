@@ -64,7 +64,7 @@ public class AdminController {
                     System.out.println("Logout...");
                     return;
                 }
-                default: System.out.println("Pilihan tidak valid."); break;
+                default: System.out.println("Pilihan yang Anda masukkan tidak valid."); break;
             }
         }
     }
