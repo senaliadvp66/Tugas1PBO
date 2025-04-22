@@ -115,7 +115,15 @@ public class MenuCustomer {
             daftarSBN.get(i).tampilkanInfo();
         }
 
-        int idx = inputInt(input, "Pilih SBN: ") - 1;
+        int idx;
+        while (true) {
+            idx = inputInt(input, "Pilih SBN: ") - 1;  // Mengurangi 1 untuk mendapatkan indeks yang benar
+            if (idx < 0 || idx >= daftarSBN.size()) {
+                System.out.println("⚠️ Pilihan tidak valid. Silakan pilih SBN yang valid.");
+            } else {
+                break;
+            }
+        }
         double nominal = inputDouble(input, "Nominal pembelian: ");
         SuratBerhargaNegara sbn = daftarSBN.get(idx);
         sbn.kurangiKuota(nominal);
