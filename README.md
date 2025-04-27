@@ -44,15 +44,3 @@ Berikut adalah diagram hubungan antar kelas:
 - **Customer** memiliki **Portofolio** berisi **Saham** dan **SuratBerhargaNegara**.
 
 
-
-
-
-
-
----
-
-## Catatan
-
-- Semua data disimpan di memori (tidak menggunakan database/file).
-- Akun login sudah di-hardcode di dalam program.
-
