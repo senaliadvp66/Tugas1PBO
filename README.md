@@ -38,7 +38,7 @@ Program sederhana berbasis Java untuk simulasi investasi Saham dan Surat Berharg
 
 Berikut adalah diagram hubungan antar kelas:
 
-* ss UML
+![UML Diagram](./uml.png)
 
 - **Admin** mengelola **Saham** dan **SuratBerhargaNegara**.
 - **Customer** memiliki **Portofolio** berisi **Saham** dan **SuratBerhargaNegara**.
