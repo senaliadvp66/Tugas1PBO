@@ -13,14 +13,14 @@ public class CustomerController {
         Scanner input = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\n=========================================================================");
-            System.out.println("||                           MENU CUSTOMER                             ||");
-            System.out.println("=========================================================================");
-            System.out.println("|| [1] Saham                                                           ||");
-            System.out.println("|| [2] SBN                                                             ||");
-            System.out.println("|| [3] Lihat Portofolio                                                ||");
-            System.out.println("|| [4] Logout                                                          ||");
-            System.out.println("=========================================================================");
+            System.out.println("\n====================================================================================================");
+            System.out.println("||                                        MENU CUSTOMER                                            ||");
+            System.out.println("====================================================================================================");
+            System.out.println("|| [1] Saham                                                                                       ||");
+            System.out.println("|| [2] SBN                                                                                         ||");
+            System.out.println("|| [3] Lihat Portofolio                                                                            ||");
+            System.out.println("|| [4] Logout                                                                                      ||");
+            System.out.println("====================================================================================================");
             int pilih = inputInt(input, "Pilih: ");
 
             switch (pilih) {
@@ -37,14 +37,14 @@ public class CustomerController {
                     customer.getPortofolio().tampilkanPortofolio();
                     break;
                 case 4:
-                    System.out.println("\n=========================================================================");
-                    System.out.println("||                          Logout berhasil                            ||");
-                    System.out.println("=========================================================================");
+                    System.out.println("\n====================================================================================================");
+                    System.out.println("||                                      Logout berhasil                                           ||");
+                    System.out.println("====================================================================================================");
                     return;  // Logout dan keluar
                 default:
-                    System.out.println("\n=========================================================================");
-                    System.out.println("||                         Pilihan tidak valid                         ||");
-                    System.out.println("=========================================================================");
+                    System.out.println("\n====================================================================================================");
+                    System.out.println("||                                 Pilihan tidak valid                                            ||");
+                    System.out.println("====================================================================================================");
             }
         }
     }
