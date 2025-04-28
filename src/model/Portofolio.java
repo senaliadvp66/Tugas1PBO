@@ -27,10 +27,13 @@ public class Portofolio {
     }
 
     public void tampilkanPortofolio() {
-        System.out.println("\n=== PORTOFOLIO SAHAM ===");
+        System.out.println("\n=========================================================================");
+        System.out.println("||                           PORTOFOLIO SAHAM                          ||");
+        System.out.println("=========================================================================");
+
         double totalPasar = 0;
         if (saham.isEmpty()) {
-            System.out.println("Belum punya saham.");
+            System.out.println("||                      Belum punya saham.                             ||");
         } else {
             for (Saham sObj : saham.keySet()) {
                 int lembar = saham.get(sObj);
@@ -42,10 +45,13 @@ public class Portofolio {
             System.out.printf("Total Nilai Pasar Saham: Rp%.2f\n", totalPasar);
         }
 
-        System.out.println("\n=== PORTOFOLIO SBN ===");
+        System.out.println("\n=========================================================================");
+        System.out.println("||                            PORTOFOLIO SBN                           ||");
+        System.out.println("=========================================================================");
+
         double totalBunga = 0;
         if (sbn.isEmpty()) {
-            System.out.println("Belum punya SBN.");
+            System.out.println("||                      Belum punya SBN.                               ||");
         } else {
             for (SuratBerhargaNegara sb : sbn.keySet()) {
                 double nominal = sbn.get(sb);
@@ -56,6 +62,7 @@ public class Portofolio {
             }
             System.out.printf("Total Bunga SBN per Bulan: Rp%.2f\n", totalBunga);
         }
+        System.out.println("=========================================================================");
     }
 
     public Map<Saham, Integer> getSaham() {

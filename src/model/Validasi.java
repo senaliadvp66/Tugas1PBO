@@ -9,7 +9,9 @@ public class Validasi {
             try {
                 return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Masukkan angka yang valid.");
+                System.out.println("=========================================================================");
+                System.out.println("||                   Masukkan angka yang valid.                        ||");
+                System.out.println("=========================================================================");
             }
         }
     }
@@ -20,7 +22,9 @@ public class Validasi {
             try {
                 return Double.parseDouble(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Masukkan angka desimal yang valid.");
+                System.out.println("=========================================================================");
+                System.out.println("||             Masukkan angka desimal yang valid.                      ||");
+                System.out.println("=========================================================================");
             }
         }
     }
@@ -30,7 +34,9 @@ public class Validasi {
             System.out.print(pesan);
             String input = scanner.nextLine().trim();
             if (!input.isEmpty()) return input;
-            System.out.println("Input tidak boleh kosong.");
+            System.out.println("=========================================================================");
+            System.out.println("||                   Input tidak boleh kosong.                         ||");
+            System.out.println("=========================================================================");
         }
     }
 }

@@ -32,7 +32,9 @@ public class Saham {
     }
 
     public void tampilkanInfo() {
+        System.out.println("=========================================================================");
         System.out.printf("Kode: %s | Nama: %s | Harga: Rp%.2f\n", kode, namaPerusahaan, harga);
+        System.out.println("=========================================================================");
     }
 }
 
