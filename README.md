@@ -26,7 +26,7 @@ Pengguna terbagi menjadi dua jenis yaitu Admin dan Customer. Admin dapat mengelo
 - Clone repository ini melalui link https://github.com/senaliadvp66/Tugas1PBO.git
 - Buka project dengan IDE seperti IntelliJ IDEA, Eclipse, atau NetBeans.
 - Pastikan sudah menggunakan Java 8 atau lebih baru.
-- Jalankan file Main.java yang berada di dalam folder src.
+- Jalankan file Main.java 
 
 ## Tampilan Program
 ### Awal
