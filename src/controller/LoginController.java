@@ -29,7 +29,7 @@ public class LoginController {
                 System.out.println("\n====================================================================================================");
                 System.out.println("||                                       Login berhasil!                                          ||");
                 System.out.println("====================================================================================================");
-                System.out.printf("                     Selamat datang, %-60s||\n", userLogin.getUsername());
+                System.out.printf("                                Selamat datang, %-60s||\n", userLogin.getUsername());
                 System.out.println("====================================================================================================");
                 if (userLogin.getRole().equals("admin")) {
                     return userLogin;
