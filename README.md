@@ -109,7 +109,7 @@ Pengguna terbagi menjadi dua jenis yaitu Admin dan Customer. Admin dapat mengelo
 - Beli Surat Berharga Negara (SBN)
 
 ![customsbnbeli.jpg](images/customsbnbeli.jpg)
-asdgaidgaiudgaiusd
+
 
 ![customsbnbeli1.jpg](images/customsbnbeli1.jpg)<br>
 - Simulasi Investasi SBN
