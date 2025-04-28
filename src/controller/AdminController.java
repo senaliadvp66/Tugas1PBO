@@ -31,6 +31,7 @@ public class AdminController {
                     break;
                 case 3:
                     MenuAdmin.lihatProdukInvestasi(daftarSaham, daftarSBN);
+                    break;
                 case 4:
                     System.out.println("\n=========================================================================");
                     System.out.println("||                           Logout berhasil                           ||");

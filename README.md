@@ -36,7 +36,7 @@ Pengguna terbagi menjadi dua jenis yaitu Admin dan Customer. Admin dapat mengelo
 
 ### Menu Admin
 
-#### Menu Admin untuk Mengelola Saham
+#### Menu Saham untuk Admin
 
 - Tambah Saham Baru
 
@@ -44,12 +44,15 @@ Pengguna terbagi menjadi dua jenis yaitu Admin dan Customer. Admin dapat mengelo
 
 - Kembali ke Menu Admin
 
-####  Menu Admin untuk mengelola Surat Berharga Negara (SBN)
+#### Menu Surat Berharga Negara (SBN) untuk Admin
 - Tambah Produk SBN Baru
 
 - Kembali ke Menu Admin
 
-- Logout
+### List Produk Investasi
+
+#### Logout
+
 
 ### Menu Customer
 
