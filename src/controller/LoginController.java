@@ -14,7 +14,7 @@ public class LoginController {
         System.out.println("1. Login sebagai Admin");
         System.out.println("2. Login sebagai Customer");
         System.out.println("3. Keluar");
-        int pilih = inputInt(input, "Masukkan Pilihan: ");
+        int pilih = inputInt(input, "Pilih: ");
 
         if (pilih == 1 || pilih == 2) {
             String roleYangDipilih = (pilih == 1) ? "admin" : "customer";
