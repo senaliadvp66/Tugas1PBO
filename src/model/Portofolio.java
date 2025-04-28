@@ -6,18 +6,18 @@ public class Portofolio {
     private Map<Saham, Integer> saham = new HashMap<>();
     private Map<SuratBerhargaNegara, Double> sbn = new HashMap<>();
 
-    public void beliSaham(Saham s, int lembar) {
+    public void beliSaham(Saham sObj, int lembar) {
         if (lembar <= 0) throw new IllegalArgumentException("Lembar harus lebih dari 0.");
-        saham.put(s, saham.getOrDefault(s, 0) + lembar);
+        saham.put(sObj, saham.getOrDefault(sObj, 0) + lembar);
     }
 
-    public boolean jualSaham(Saham s, int lembar) {
+    public boolean jualSaham(Saham sObj, int lembar) {
         if (lembar <= 0) return false;
-        if (!saham.containsKey(s) || saham.get(s) < lembar) {
+        if (!saham.containsKey(sObj) || saham.get(sObj) < lembar) {
             return false;
         }
-        saham.put(s, saham.get(s) - lembar);
-        if (saham.get(s) == 0) saham.remove(s);
+        saham.put(sObj, saham.get(sObj) - lembar);
+        if (saham.get(sObj) == 0) saham.remove(sObj);
         return true;
     }
 
@@ -32,11 +32,11 @@ public class Portofolio {
         if (saham.isEmpty()) {
             System.out.println("Belum punya saham.");
         } else {
-            for (Saham s : saham.keySet()) {
-                int lembar = saham.get(s);
-                double nilai = s.getHarga() * lembar;
+            for (Saham sObj : saham.keySet()) {
+                int lembar = saham.get(sObj);
+                double nilai = sObj.getHarga() * lembar;
                 System.out.printf("Kode: %s | Nama: %s | Lembar: %d | Nilai Pasar: Rp%.2f\n",
-                        s.getKode(), s.getNamaPerusahaan(), lembar, nilai);
+                        sObj.getKode(), sObj.getNamaPerusahaan(), lembar, nilai);
                 totalPasar += nilai;
             }
             System.out.printf("Total Nilai Pasar Saham: Rp%.2f\n", totalPasar);

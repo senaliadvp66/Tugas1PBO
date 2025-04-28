@@ -50,7 +50,7 @@ public class MenuCustomer {
         if (idx >= 0 && idx < daftarSaham.size()) {
             int jumlah = inputInt(input, "Jumlah lembar: ");
             customer.getPortofolio().beliSaham(daftarSaham.get(idx), jumlah);
-            System.out.println("✅ Saham berhasil dibeli.");
+            System.out.println("Saham berhasil dibeli.");
         } else {
             System.out.println("Pilihan tidak valid.");
         }
@@ -72,9 +72,9 @@ public class MenuCustomer {
         int idx = inputInt(input, "Pilih nomor saham yang ingin dijual: ") - 1;
         int jumlah = inputInt(input, "Jumlah lembar: ");
         if (!customer.getPortofolio().jualSaham(list.get(idx), jumlah)) {
-            System.out.println("⚠️ Gagal jual saham. Jumlah tidak mencukupi.");
+            System.out.println("Gagal jual saham. Jumlah tidak mencukupi.");
         } else {
-            System.out.println("✅ Saham berhasil dijual.");
+            System.out.println("Saham berhasil dijual.");
         }
     }
 
@@ -119,7 +119,7 @@ public class MenuCustomer {
         while (true) {
             idx = inputInt(input, "Pilih SBN: ") - 1;  // Mengurangi 1 untuk mendapatkan indeks yang benar
             if (idx < 0 || idx >= daftarSBN.size()) {
-                System.out.println("⚠️ Pilihan tidak valid. Silakan pilih SBN yang valid.");
+                System.out.println("Pilihan tidak valid. Silakan pilih SBN yang valid.");
             } else {
                 break;
             }
@@ -128,7 +128,7 @@ public class MenuCustomer {
         SuratBerhargaNegara sbn = daftarSBN.get(idx);
         sbn.kurangiKuota(nominal);
         customer.getPortofolio().beliSBN(sbn, nominal);
-        System.out.println("✅ SBN berhasil dibeli.");
+        System.out.println("SBN berhasil dibeli.");
     }
 
     // Method untuk Simulasi SBN
@@ -136,6 +136,6 @@ public class MenuCustomer {
         double bunga = inputDouble(input, "Bunga (%): ");
         double nominal = inputDouble(input, "Nominal investasi: ");
         double hasil = (bunga / 100) / 12 * 0.9 * nominal;
-        System.out.printf("💰 Simulasi bunga per bulan: Rp%.2f\n", hasil);
+        System.out.printf("Simulasi bunga per bulan: Rp%.2f\n", hasil);
     }
 }

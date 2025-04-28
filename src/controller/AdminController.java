@@ -4,6 +4,7 @@ import model.*;
 import view.*;
 import java.util.Scanner;
 import java.util.List;
+
 import static model.Validasi.inputInt;
 
 

@@ -2,9 +2,6 @@ import model.*;
 import controller.*;
 import java.util.*;
 
-import static model.Validasi.inputInt;
-import static model.Validasi.inputString;
-
 public class Main {
     static ArrayList<User> users = new ArrayList<>();
     static ArrayList<Saham> daftarSaham = new ArrayList<>();
@@ -15,35 +12,20 @@ public class Main {
         initUsers();
 
         while (true) {
-            System.out.println("\n=== MENU AWAL ===");
-            System.out.println("1. Login sebagai Admin");
-            System.out.println("2. Login sebagai Customer");
-            System.out.println("3. Keluar");
-            int pilih = inputInt(input, "Pilih: ");
+            User userLogin = LoginController.loginProcess(input, users);
 
-            if (pilih == 1 || pilih == 2) {
-                String roleYangDipilih = (pilih == 1) ? "admin" : "customer";
-                String username = inputString(input, "Username: ");
-                String password = inputString(input, "Password: ");
-
-                User userLogin = login(username, password, roleYangDipilih);
-                if (userLogin != null) {
-                    if (userLogin.getRole().equals("admin")) {
-                        AdminController.menu((Admin) userLogin, input, daftarSaham, daftarSBN);
-                    } else {
-                        CustomerController.menu((Customer) userLogin, daftarSaham, daftarSBN);
-                    }
+            if (userLogin != null) {
+                if (userLogin.getRole().equals("admin")) {
+                    AdminController.menu((Admin) userLogin, input, daftarSaham, daftarSBN);
                 } else {
-                    System.out.println("Login gagal. Username/password salah atau bukan " + roleYangDipilih);
+                    CustomerController.menu((Customer) userLogin, daftarSaham, daftarSBN);
                 }
-            } else if (pilih == 3) {
-                System.out.println("Terima kasih!");
-                break;
             } else {
-                System.out.println("Pilihan tidak valid.");
+                break;
             }
         }
     }
+
     static void initUsers() {
         Admin lia = new Admin("Adminlia", "adminlia123");
         Admin tasya = new Admin("Admintasya", "admintasya123");
@@ -53,7 +35,7 @@ public class Main {
         // Tambah contoh saham & sbn
         Saham bbca = new Saham("BBCA", "Bank BCA", 10000000);
         Saham tlkm = new Saham("TLKM", "Telkom Indonesia", 40000000);
-        Saham ri0t = new Saham ("RI0T", "Riot Games", 15000000 );
+        Saham ri0t = new Saham("RI0T", "Riot Games", 15000000);
         daftarSaham.add(bbca);
         daftarSaham.add(tlkm);
         daftarSaham.add(ri0t);
@@ -77,15 +59,4 @@ public class Main {
         users.add(budi);
         users.add(sari);
     }
-
-    static User login(String username, String password, String role) {
-        for (User user : users) {
-            if (user.login(username, password) && user.getRole().equals(role)) {
-                return user;
-            }
-        }
-        return null;
-    }
 }
-
-
