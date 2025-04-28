@@ -45,6 +45,6 @@ public class SuratBerhargaNegara {
     public void tampilkanInfo() {
         System.out.printf("Nama: %s | Bunga: %.2f%% | Waktu: %d bln | Jatuh Tempo: %s | Kuota: Rp%.2f\n",
                 nama, bunga, jangkaWaktu, tanggalJatuhTempo, kuotaNasional);
-        System.out.println("===================================================================================");
+        System.out.println("====================================================================================================");
     }
 }

@@ -27,13 +27,13 @@ public class Portofolio {
     }
 
     public void tampilkanPortofolio() {
-        System.out.println("\n=========================================================================");
-        System.out.println("||                           PORTOFOLIO SAHAM                          ||");
-        System.out.println("=========================================================================");
+        System.out.println("\n====================================================================================================");
+        System.out.println("||                                     PORTOFOLIO SAHAM                                           ||");
+        System.out.println("====================================================================================================");
 
         double totalPasar = 0;
         if (saham.isEmpty()) {
-            System.out.println("||                      Belum punya saham.                             ||");
+            System.out.println("||                                Belum punya saham.                                              ||");
         } else {
             for (Saham sObj : saham.keySet()) {
                 int lembar = saham.get(sObj);
@@ -43,12 +43,12 @@ public class Portofolio {
                 totalPasar += nilai;
             }
             System.out.printf("Total Nilai Pasar Saham: Rp%.2f\n", totalPasar);
-            System.out.println("=========================================================================");
+            System.out.println("====================================================================================================");
         }
 
-        System.out.println("\n=========================================================================");
-        System.out.println("||                            PORTOFOLIO SBN                           ||");
-        System.out.println("=========================================================================");
+        System.out.println("\n====================================================================================================");
+        System.out.println("||                                      PORTOFOLIO SBN                                            ||");
+        System.out.println("====================================================================================================");
 
         double totalBunga = 0;
         if (sbn.isEmpty()) {
@@ -63,7 +63,7 @@ public class Portofolio {
             }
             System.out.printf("Total Bunga SBN per Bulan: Rp%.2f\n", totalBunga);
         }
-        System.out.println("=========================================================================");
+        System.out.println("====================================================================================================");
     }
 
     public Map<Saham, Integer> getSaham() {
