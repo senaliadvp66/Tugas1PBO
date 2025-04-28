@@ -11,11 +11,11 @@ public class LoginController {
 
     public static User loginProcess(Scanner input, ArrayList<User> users) {
         System.out.println("\n====================================================================================================");
-        System.out.println("||                                           MENU AWAL                                             ||");
+        System.out.println("||                                           MENU AWAL                                            ||");
         System.out.println("====================================================================================================");
-        System.out.println("|| [1] Login sebagai Admin                                                                         ||");
-        System.out.println("|| [2] Login sebagai Customer                                                                      ||");
-        System.out.println("|| [3] Keluar                                                                                      ||");
+        System.out.println("|| [1] Login sebagai Admin                                                                        ||");
+        System.out.println("|| [2] Login sebagai Customer                                                                     ||");
+        System.out.println("|| [3] Keluar                                                                                     ||");
         System.out.println("====================================================================================================");
         int pilih = inputInt(input, "Pilih: ");
 

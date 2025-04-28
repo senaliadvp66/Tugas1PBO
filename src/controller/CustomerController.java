@@ -14,12 +14,12 @@ public class CustomerController {
 
         while (true) {
             System.out.println("\n====================================================================================================");
-            System.out.println("||                                        MENU CUSTOMER                                            ||");
+            System.out.println("||                                        MENU CUSTOMER                                           ||");
             System.out.println("====================================================================================================");
-            System.out.println("|| [1] Saham                                                                                       ||");
-            System.out.println("|| [2] SBN                                                                                         ||");
-            System.out.println("|| [3] Lihat Portofolio                                                                            ||");
-            System.out.println("|| [4] Logout                                                                                      ||");
+            System.out.println("|| [1] Saham                                                                                      ||");
+            System.out.println("|| [2] SBN                                                                                        ||");
+            System.out.println("|| [3] Lihat Portofolio                                                                           ||");
+            System.out.println("|| [4] Logout                                                                                     ||");
             System.out.println("====================================================================================================");
             int pilih = inputInt(input, "Pilih: ");
 
