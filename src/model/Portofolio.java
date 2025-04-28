@@ -43,6 +43,7 @@ public class Portofolio {
                 totalPasar += nilai;
             }
             System.out.printf("Total Nilai Pasar Saham: Rp%.2f\n", totalPasar);
+            System.out.println("=========================================================================");
         }
 
         System.out.println("\n=========================================================================");
