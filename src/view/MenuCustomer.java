@@ -13,7 +13,7 @@ public class MenuCustomer {
     public static void menuSaham(Customer customer, Scanner input, List<Saham> daftarSaham) {
         while (true) {
             System.out.println("\n====================================================================================================");
-            System.out.println("||                                       MENU SAHAM                                               ||");
+            System.out.println("||                                            MENU SAHAM                                          ||");
             System.out.println("====================================================================================================");
             System.out.println("|| 1. Beli Saham                                                                                  ||");
             System.out.println("|| 2. Jual Saham                                                                                  ||");
@@ -32,7 +32,7 @@ public class MenuCustomer {
                     return;  // Kembali ke menu utama customer
                 default:
                     System.out.println("====================================================================================================");
-                    System.out.println("||                              Pilihan tidak valid.                                              ||");
+                    System.out.println("||                                  Pilihan tidak valid.                                          ||");
                     System.out.println("====================================================================================================");
             }
         }
@@ -42,7 +42,7 @@ public class MenuCustomer {
     private static void beliSaham(Customer customer, Scanner input, List<Saham> daftarSaham) {
         if (daftarSaham.isEmpty()) {
             System.out.println("====================================================================================================");
-            System.out.println("||                              Belum ada saham.                                                  ||");
+            System.out.println("||                                      Belum ada saham.                                          ||");
             System.out.println("====================================================================================================");
             return;
         }
@@ -57,11 +57,11 @@ public class MenuCustomer {
             int jumlah = inputInt(input, "Jumlah lembar: ");
             customer.getPortofolio().beliSaham(daftarSaham.get(idx), jumlah);
             System.out.println("====================================================================================================");
-            System.out.println("||                         Saham berhasil dibeli.                                                ||");
+            System.out.println("||                                     Saham berhasil dibeli.                                     ||");
             System.out.println("====================================================================================================");
         } else {
             System.out.println("====================================================================================================");
-            System.out.println("||                              Pilihan tidak valid.                                              ||");
+            System.out.println("||                                      Pilihan tidak valid.                                      ||");
             System.out.println("====================================================================================================");
         }
     }
@@ -70,7 +70,7 @@ public class MenuCustomer {
     private static void jualSaham(Customer customer, Scanner input, List<Saham> daftarSaham) {
         if (customer.getPortofolio().getSaham().isEmpty()) {
             System.out.println("====================================================================================================");
-            System.out.println("||                               Belum punya saham.                                               ||");
+            System.out.println("||                                      Belum punya saham.                                        ||");
             System.out.println("====================================================================================================");
             return;
         }
@@ -85,11 +85,11 @@ public class MenuCustomer {
         int jumlah = inputInt(input, "Jumlah lembar: ");
         if (!customer.getPortofolio().jualSaham(list.get(idx), jumlah)) {
             System.out.println("====================================================================================================");
-            System.out.println("||                  Gagal jual saham. Jumlah tidak mencukupi.                                     ||");
+            System.out.println("||                            Gagal jual saham. Jumlah tidak mencukupi.                           ||");
             System.out.println("====================================================================================================");
         } else {
             System.out.println("====================================================================================================");
-            System.out.println("||                          Saham berhasil dijual.                                                ||");
+            System.out.println("||                                    Saham berhasil dijual.                                      ||");
             System.out.println("====================================================================================================");
         }
     }
@@ -98,7 +98,7 @@ public class MenuCustomer {
     public static void menuSBN(Customer customer, Scanner input, List<SuratBerhargaNegara> daftarSBN) {
         while (true) {
             System.out.println("\n====================================================================================================");
-            System.out.println("||                                    MENU SBN                                                    ||");
+            System.out.println("||                                            MENU SBN                                            ||");
             System.out.println("====================================================================================================");
             System.out.println("|| 1. Beli SBN                                                                                    ||");
             System.out.println("|| 2. Simulasi SBN                                                                                ||");
@@ -117,7 +117,7 @@ public class MenuCustomer {
                     return;  // Kembali ke menu utama customer
                 default:
                     System.out.println("====================================================================================================");
-                    System.out.println("||                              Pilihan tidak valid.                                              ||");
+                    System.out.println("||                                     Pilihan tidak valid.                                       ||");
                     System.out.println("====================================================================================================");
             }
         }
@@ -127,7 +127,7 @@ public class MenuCustomer {
     private static void beliSBN(Customer customer, Scanner input, List<SuratBerhargaNegara> daftarSBN) {
         if (daftarSBN.isEmpty()) {
             System.out.println("====================================================================================================");
-            System.out.println("||                                  Belum ada SBN.                                                ||");
+            System.out.println("||                                          Belum ada SBN.                                        ||");
             System.out.println("====================================================================================================");
             return;
         }
@@ -142,7 +142,7 @@ public class MenuCustomer {
             idx = inputInt(input, "Pilih SBN: ") - 1;  // Mengurangi 1 untuk mendapatkan indeks yang benar
             if (idx < 0 || idx >= daftarSBN.size()) {
                 System.out.println("====================================================================================================");
-                System.out.println("||             Pilihan tidak valid. Silakan pilih SBN yang valid.                                 ||");
+                System.out.println("||                       Pilihan tidak valid. Silakan pilih SBN yang valid.                       ||");
                 System.out.println("====================================================================================================");
             } else {
                 break;
@@ -153,7 +153,7 @@ public class MenuCustomer {
         sbn.kurangiKuota(nominal);
         customer.getPortofolio().beliSBN(sbn, nominal);
         System.out.println("====================================================================================================");
-        System.out.println("||                          SBN berhasil dibeli.                                                  ||");
+        System.out.println("||                                       SBN berhasil dibeli.                                     ||");
         System.out.println("====================================================================================================");
     }
 
@@ -163,7 +163,7 @@ public class MenuCustomer {
         double nominal = inputDouble(input, "Nominal investasi: ");
         double hasil = (bunga / 100) / 12 * 0.9 * nominal;
         System.out.println("====================================================================================================");
-        System.out.printf ("              Simulasi bunga per bulan: Rp%-40.2f ||\n", hasil);
+        System.out.printf ("                    Simulasi bunga per bulan: Rp%-40.2f ||\n", hasil);
         System.out.println("====================================================================================================");
 
     }
